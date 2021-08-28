@@ -12,12 +12,11 @@ module.exports = {
         res.json(response)
     },
     tourism: (req, res, next) => {
-        var filterAccountsTags = accountsData.accounts.filter((account)=> {
-            return account.tags.length >= 1;
+        var filterTourismData = accountsData.accounts.filter((account)=> {
+            if (account.tags.length >= 1) {
+                return account.tags[0].name === "Turismo en Buenos Aires";
+            }
         });
-        var filterTourismData = filterAccountsTags.filter((account) => {
-            return account.tags[0].name === "Turismo en Buenos Aires";
-        })
 
         var response = {
             meta: {
