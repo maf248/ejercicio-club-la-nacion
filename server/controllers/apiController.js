@@ -30,9 +30,22 @@ module.exports = {
     },
 
     discount: (req, res, next) => {
+        // Filtrado de accounts con Voucher
         var filterDiscountData = accountsData.accounts.filter((account)=> {
             return account.haveVoucher;
         });
+        // Función para ordenar alfabeticamente en base a propiedad 'name'
+        function compareNames( a, b ) {
+            if ( a.name < b.name ){
+              return 1;
+            }
+            if ( a.name > b.name ){
+              return -1;
+            }
+            return 0;
+        }
+        // Ordenado alfabetico descendiente (Z-A) de accounts
+        filterDiscountData = filterDiscountData.sort(compareNames);
 
         var response = {
             meta: {
