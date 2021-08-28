@@ -18,6 +18,22 @@ module.exports = {
                 return tag.name === "Turismo en Buenos Aires"
             });
         });
+        // Funcion para ordenar accounts con sucursales más cercanas primero, sucursales más lejanas despues
+        function compareBranches(a, b) {
+            // Se obtiene el local más cercano (menor location) de cada account
+            var firstClosest = Math.min.apply(null, a.branches.map(function(branch) { return branch.location; }));
+            var secondClosest = Math.min.apply(null, b.branches.map(function(branch) { return branch.location; }));
+            // Se comparan locales más cercanos de accounts para ordenarlos
+            if (firstClosest < secondClosest) {
+                return -1;
+            }
+            if (firstClosest > secondClosest) {
+                return 1;
+            }
+            return 0;
+        }
+        // Ordenado accounts con sucursales más cercanas
+        filterTourismData = filterTourismData.sort(compareBranches);
 
         var response = {
             meta: {
