@@ -128,7 +128,7 @@ module.exports = {
         if (req.query.page && req.query.limit) {
             var readyDiscountData = apiPagination(req, res, filterDiscountData);
             // Si el pedido de paginacion por query string es incorrecto se redirige
-            if (!readyTourismData) {
+            if (!readyDiscountData) {
                 return res.redirect(`/api${req.url.split('?').shift()}`);
             }
         } else {
