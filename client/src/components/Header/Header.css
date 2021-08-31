@@ -5,8 +5,9 @@
     justify-content: space-between;
     padding: 4px;
     height: 45px;
-    background-color: rgba(200,200,200,0.2);
+    background-color: rgba(200, 200, 200, 0.2);
 }
+
 .logo {
     position: relative;
     left: 50px;
@@ -17,6 +18,7 @@
 .search-navbar {
     justify-content: center;
 }
+
 .search-navbar input {
     background-color: transparent;
     padding: 10px;
@@ -24,15 +26,19 @@
     width: 200px;
     color: white;
 }
-.search-navbar input ::-webkit-input-placeholder, .search-navbar input::ms-input-placeholder {
-    color: white;
+
+.search-navbar input:focus {
+    outline: none;
 }
+
 .search-commerce {
     border-radius: 20px 0 0 20px;
 }
+
 .search-location {
     border-radius: 0 20px 20px 0;
 }
+
 .search-navbar button {
     color: white;
     background-color: #008dff;
@@ -42,12 +48,18 @@
     border-radius: 50%;
     border: none;
     margin-left: 10px;
+    cursor: pointer;
 }
 
 .extra-navbar {
     margin: 3px 15px 3px 0px;
 }
+
 .extra-navbar i {
     font-size: 1.2rem;
     margin: 8px;
+    cursor: pointer;
+}
+.extra-navbar i:hover {
+    transform: scale(1.2);
 }

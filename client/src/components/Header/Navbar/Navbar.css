@@ -8,6 +8,7 @@
     box-shadow: 0 1px 3px 0 rgb(0 0 0 / 20%), 0 2px 1px -1px rgb(0 0 0 / 12%), 0 1px 1px 0 rgb(0 0 0 / 14%);
     z-index: 1;
 }
+
 .navbar-top {
     display: flex;
     flex-direction: row;
@@ -16,33 +17,44 @@
     padding: 12px;
     cursor: pointer;
 }
+
 .navbar-top-title {
     font-size: 1rem;
     margin: 0 0 0 15px;
 }
+
 .nav-list {
     list-style-type: none;
     display: block;
     padding: 12px;
     margin: 0px;
 }
+
 .nav-list i {
     margin: 0 20px 0 5px;
     font-weight: normal !important;
 }
+
 .nav-list a {
     line-height: 2em;
     text-decoration: none;
     color: black;
 }
+
 .nav-list li:hover {
     background-color: aliceblue;
     font-weight: 600;
 }
+
 .toggle-navbar {
     display: none;
 }
-.toggle-hamburger {
+
+.hamburger-border {
     border: none !important;
     margin: 1px;
+    background-color: transparent;
+}
+.hamburger-radius {
+    border-radius: 10px;
 }

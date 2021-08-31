@@ -11,8 +11,8 @@ function Navbar() {
     };
 
     return (
-            <nav className={`navbar ${toggleNavbar ? 'toggle-hamburger' : ''}`}>
-                <div className="navbar-top" onClick={toggleButton}>
+            <nav className={`navbar ${toggleNavbar ? 'hamburger-border' : ''}`}>
+                <div className={`navbar-top ${toggleNavbar ? 'hamburger-radius' : ''}`} onClick={toggleButton}>
                     <i className="fas fa-bars" style={{fontSize: '1.1rem'}}></i> <h2 className={`navbar-top-title ${toggleNavbar ? 'toggle-navbar' : ''}`}>Ejercicio Club La Nación</h2>
                 </div>
                 <ul className={`nav-list ${toggleNavbar ? 'toggle-navbar' : ''}`}>
