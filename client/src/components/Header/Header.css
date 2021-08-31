@@ -1,0 +1,10 @@
+.header {
+    padding: 3px;
+    background-color: red;
+}
+.logo {
+    position: relative;
+    left: 50px;
+    top: 5px;
+    width: 70px;
+}

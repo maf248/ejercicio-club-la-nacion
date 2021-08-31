@@ -11,15 +11,17 @@ function Navbar() {
     };
 
     return (
-            <nav className="navbar">
+            <nav className={`navbar ${toggleNavbar ? 'toggle-hamburger' : ''}`}>
                 <div className="navbar-top" onClick={toggleButton}>
-                    <i className="fas fa-bars"></i> <h2 className={`navbar-top-title ${toggleNavbar ? 'toggle-navbar' : ''}`}>Ejercicio Club La Nación</h2>
+                    <i className="fas fa-bars" style={{fontSize: '1.1rem'}}></i> <h2 className={`navbar-top-title ${toggleNavbar ? 'toggle-navbar' : ''}`}>Ejercicio Club La Nación</h2>
                 </div>
                 <ul className={`nav-list ${toggleNavbar ? 'toggle-navbar' : ''}`}>
                     { MenuItems.map((item, index) => {
-                        return (<li className={item.clases} key={`menuitem${index}`}>
-                                <a href={item.url} target="_blank" rel="noreferrer"><i className={item.icon}></i> {item.title}</a>
-                                </li>)
+                        return (<a href={item.url} target="_blank" rel="noreferrer">
+                                    <li className={item.clases} key={`menuitem${index}`}>
+                                        <i className={item.icon}></i> <span>{item.title}</span>
+                                    </li>
+                                </a>)
                     })}
                 </ul>
             </nav>

@@ -2,11 +2,10 @@
     max-width: 300px;
     background: white;
     position: absolute;
-    top: 0px;
-    transition: all .5s;
+    top: 3px;
     border-bottom: 3px solid #008dff;
     box-shadow: 0 1px 3px 0 rgb(0 0 0 / 20%), 0 2px 1px -1px rgb(0 0 0 / 12%), 0 1px 1px 0 rgb(0 0 0 / 14%);
-    
+    z-index: 1;
 }
 .navbar-top {
     display: flex;
@@ -27,13 +26,22 @@
     margin: 0px;
 }
 .nav-list i {
-    margin-right: 20px;
+    margin: 0 20px 0 5px;
+    font-weight: normal !important;
 }
-.nav-links a {
+.nav-list a {
     line-height: 2em;
     text-decoration: none;
     color: black;
 }
+.nav-list li:hover {
+    background-color: aliceblue;
+    font-weight: 600;
+}
 .toggle-navbar {
     display: none;
+}
+.toggle-hamburger {
+    border: none !important;
+    margin: 1px;
 }
