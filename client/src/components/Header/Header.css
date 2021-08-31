@@ -1,10 +1,53 @@
 .header {
-    padding: 3px;
-    background-color: red;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 4px;
+    height: 45px;
+    background-color: rgba(200,200,200,0.2);
 }
 .logo {
     position: relative;
     left: 50px;
-    top: 5px;
+    top: 1px;
     width: 70px;
+}
+
+.search-navbar {
+    justify-content: center;
+}
+.search-navbar input {
+    background-color: transparent;
+    padding: 10px;
+    border: 2px solid white;
+    width: 200px;
+    color: white;
+}
+.search-navbar input ::-webkit-input-placeholder, .search-navbar input::ms-input-placeholder {
+    color: white;
+}
+.search-commerce {
+    border-radius: 20px 0 0 20px;
+}
+.search-location {
+    border-radius: 0 20px 20px 0;
+}
+.search-navbar button {
+    color: white;
+    background-color: #008dff;
+    width: 35px;
+    height: 35px;
+    padding: 10px;
+    border-radius: 50%;
+    border: none;
+    margin-left: 10px;
+}
+
+.extra-navbar {
+    margin: 3px 15px 3px 0px;
+}
+.extra-navbar i {
+    font-size: 1.2rem;
+    margin: 8px;
 }

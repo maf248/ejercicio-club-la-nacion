@@ -7,6 +7,16 @@ function Header () {
         <header className="header">
             <Navbar />
             <img src={process.env.PUBLIC_URL + 'club-la-nacion-logo.svg'} className="logo" alt="Logo Club La Nación" />
+            <form className="search-navbar">
+                <input type="text" placeholder="Busca un comercio..." className="search-commerce" />
+                <input type="text" placeholder="Ingresa una ubicación..." className="search-location" />
+                <button type="submit"><i class="fas fa-search"></i></button>
+            </form>
+            <div className="extra-navbar">
+                <i class="far fa-bell" style={{color: 'white'}} />
+                <i class="far fa-heart" style={{color: 'white'}} />
+                <i class="fas fa-smile-beam" style={{color: '#fbba08'}} />
+            </div>
         </header>
     )
 }
