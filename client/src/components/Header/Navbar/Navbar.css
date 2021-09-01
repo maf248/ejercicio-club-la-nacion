@@ -43,7 +43,7 @@
 }
 
 .nav-list li:hover {
-    background-color: aliceblue;
+    background-color: #7FC6FF;
     font-weight: 600;
 }
 
@@ -56,6 +56,16 @@
     margin: 1px;
     background-color: transparent;
 }
+
 .hamburger-transparent {
     background-color: transparent;
+}
+
+.hamburger-transparent:hover {
+    opacity: 0.9;
+    background-color: #008dff;
+    -moz-transition: all .2s ease-in;
+    -o-transition: all .2s ease-in;
+    -webkit-transition: all .2s ease-in;
+    transition: all .2s ease-in;
 }
