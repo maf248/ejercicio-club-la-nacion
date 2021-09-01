@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import './App.css';
 
 import Header from './components/Header/Header';
+import MainSlider from "./components/MainSlider/MainSlider";
 
 class App extends Component {
   constructor() {
@@ -28,6 +29,7 @@ class App extends Component {
     return (
       <div className="App">
       <Header/>
+      <MainSlider />
         <p>{!this.state.data ? "Loading..." : "Data Ready!"}</p>
     </div>
     );
