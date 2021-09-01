@@ -12,13 +12,13 @@ function Navbar() {
 
     return (
             <nav className={`navbar ${toggleNavbar ? 'hamburger-border' : ''}`}>
-                <div className={`navbar-top ${toggleNavbar ? 'hamburger-radius' : ''}`} onClick={toggleButton}>
+                <div className={`navbar-top ${toggleNavbar ? 'hamburger-transparent' : ''}`} onClick={toggleButton}>
                     <i className="fas fa-bars" style={{fontSize: '1.1rem'}}></i> <h2 className={`navbar-top-title ${toggleNavbar ? 'toggle-navbar' : ''}`}>Ejercicio Club La Nación</h2>
                 </div>
                 <ul className={`nav-list ${toggleNavbar ? 'toggle-navbar' : ''}`}>
                     { MenuItems.map((item, index) => {
-                        return (<a href={item.url} target="_blank" rel="noreferrer">
-                                    <li className={item.clases} key={`menuitem${index}`}>
+                        return (<a href={item.url} key={`menuitem${index}`} target="_blank" rel="noreferrer">
+                                    <li className={item.clases} >
                                         <i className={item.icon}></i> <span>{item.title}</span>
                                     </li>
                                 </a>)

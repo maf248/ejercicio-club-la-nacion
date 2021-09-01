@@ -10,12 +10,12 @@ function Header () {
             <form className="search-navbar">
                 <input type="text" placeholder="Busca un comercio..." className="search-commerce" />
                 <input type="text" placeholder="Ingresa una ubicación..." className="search-location" />
-                <button type="submit"><i class="fas fa-search"></i></button>
+                <button type="submit"><i className="fas fa-search"></i></button>
             </form>
             <div className="extra-navbar">
-                <i class="far fa-bell" style={{color: 'white'}} />
-                <i class="far fa-heart" style={{color: 'white'}} />
-                <i class="fas fa-smile-beam" style={{color: '#fbba08'}} />
+                <i className="far fa-bell" style={{color: 'white'}} />
+                <i className="far fa-heart" style={{color: 'white'}} />
+                <i className="fas fa-smile-beam" style={{color: '#fbba08'}} />
             </div>
         </header>
     )
