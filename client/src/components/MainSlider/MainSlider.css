@@ -39,10 +39,8 @@
     cursor: pointer;
 }
 
-.btn-slide img {
-    width: 25px;
-    height: 25px;
-    pointer-events: none;
+.btn-slide i {
+    font-size: 1.3rem;
 }
 
 .prev {

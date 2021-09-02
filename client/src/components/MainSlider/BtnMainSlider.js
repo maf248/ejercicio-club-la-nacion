@@ -1,7 +1,5 @@
 import React from "react";
 import "./MainSlider.css";
-import leftArrow from "./icons/left-arrow.svg";
-import rightArrow from "./icons/right-arrow.svg";
 
 export default function BtnMainSlider({ direction, moveSlide }) {
   return (
@@ -9,7 +7,7 @@ export default function BtnMainSlider({ direction, moveSlide }) {
       onClick={moveSlide}
       className={direction === "next" ? "btn-slide next" : "btn-slide prev"}
     >
-      <img src={direction === "next" ? rightArrow : leftArrow} alt={direction === "next" ? 'Right Arrow' : 'Left Arrow'} />
+      <i className={direction === "next" ? "fas fa-chevron-right" : "fas fa-chevron-left"} alt={direction === "next" ? 'Right Arrow' : 'Left Arrow'} />
     </button>
   );
 }
