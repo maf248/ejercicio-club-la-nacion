@@ -1,8 +1,10 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 import './App.css';
 
 import Header from './components/Header/Header';
-import MainSlider from "./components/MainSlider/MainSlider";
+import MainSlider from './components/MainSlider/MainSlider';
+
+import DiscountSlider from './components/DiscountSlider/DiscountSlider';
 
 import Footer from './components/Footer/Footer';
 
@@ -29,11 +31,11 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
+      <div className='App'>
       <Header/>
       <MainSlider />
-    
-      <Footer data={!this.state.data ? "Loading..." : "Data Ready!"} />
+      <DiscountSlider />
+      <Footer data={!this.state.data ? 'Loading...' : 'Data Ready!'} />
         
     </div>
     );

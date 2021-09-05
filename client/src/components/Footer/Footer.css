@@ -13,9 +13,17 @@
     margin: 20px;
 }
 .footer-author i {
-    color: red;
-    
+    animation: Spin infinite 3s linear;
 }
+@keyframes Spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+}
+
 .footer-data {
     color: gray;
 }
