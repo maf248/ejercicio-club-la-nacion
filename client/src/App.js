@@ -4,6 +4,8 @@ import './App.css';
 import Header from './components/Header/Header';
 import MainSlider from "./components/MainSlider/MainSlider";
 
+import Footer from './components/Footer/Footer';
+
 class App extends Component {
   constructor() {
     super();
@@ -30,7 +32,9 @@ class App extends Component {
       <div className="App">
       <Header/>
       <MainSlider />
-        <p>{!this.state.data ? "Loading..." : "Data Ready!"}</p>
+    
+      <Footer data={!this.state.data ? "Loading..." : "Data Ready!"} />
+        
     </div>
     );
   }

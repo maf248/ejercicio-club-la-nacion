@@ -3,7 +3,7 @@ export const MenuItems = [
         title: 'Marcelo A. Fanego',
         url: 'https://www.facebook.com/M.a.Fanego',
         clases: 'nav-links',
-        icon: 'fab fa-react'
+        icon: 'fab fa-facebook-square'
     },
     {
         title: 'LinkedIn',
