@@ -1,5 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300&family=Roboto:wght@300&display=swap');
+
 .container-discount-slider {
-    background-color: red;
-    width: 100%;
+    margin-top: 10px;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
     height: 300px;
+}
+
+.slider-top {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.slider-title {
+    display: flex;
+    flex-direction: row;
+    width: 75%;
+    font-family: Roboto;
+    margin-left: 30px;
+    padding: 0;
+    color: #00043a;
+    position: relative;
+    display: inline-block;
+    background-color: white;
+}
+
+.slider-title h3 {
+    font-size: 1.5rem;
+}
+
+.bottom-margin-0 {
+    margin-bottom: 0 !important;
+}
+
+.slider-title p {
+    font-size: .75rem;
+}
+
+.Button-container {
+    width: 25%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ButtonUI {
+    width: auto;
+    max-height: 2rem;
+    font-family: Roboto;
+    font-weight: bold;
+    font-size: 0.7rem;
+    color: #008dff;
+    border: 2px solid #008dff;
+    padding: 7px 14px;
+    border-radius: 15px;
+    background-color: white;
+    max-width: fit-content;
+    flex-wrap: nowrap;
+    cursor: pointer;
+}
+
+.slider-body {
+    width: 100%;
+    height: 200px;
+    background-color: lightgray;
 }

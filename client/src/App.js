@@ -31,13 +31,16 @@ class App extends Component {
 
   render() {
     return (
+      <>
       <div className='App'>
       <Header/>
       <MainSlider />
-      <DiscountSlider />
+      <DiscountSlider title={'Turismo en Buenos Aires'} btntext={'TODOS LOS BENEFICIOS'}/>
+      <DiscountSlider title={'Códigos de descuento'} subtitle={'¿Sos socio Club LA NACIÓN? Descarga tu código y disfrutá beneficios exclusivos en tus marcas favoritas.'} btntext={'TODOS LOS CÓDIGOS'}/>
+      
+      </div>
       <Footer data={!this.state.data ? 'Loading...' : 'Data Ready!'} />
-        
-    </div>
+      </>
     );
   }
 }
