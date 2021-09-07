@@ -31,7 +31,7 @@ export default function DiscountSlider(props) {
     }, [isDataReady]);
 
     return (
-        <section style={props.bgcolor}>
+        <section>
             <div className="container-discount-slider">
                 <div className='slider-top'>
                     <div className="slider-title">
