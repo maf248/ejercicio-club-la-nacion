@@ -4,6 +4,8 @@ import './DiscountSlider.css';
 import Button from '../UI/Button/Button';
 import { useEffect, useState } from 'react'
 
+import BtnDiscountSlider from './BtnDiscountSlider';
+
 export default function DiscountSlider(props) {
     const [isDataReady, setIsDataReady] = useState(false);
     const [data, setData] = useState(false);
@@ -29,19 +31,25 @@ export default function DiscountSlider(props) {
     }, [isDataReady]);
 
     return (
-        <div className="container-discount-slider">
-            <div className='slider-top'>
-                <div className="slider-title">
-                    <h3 className={props.subtitle ? 'bottom-margin-0' : ''}>{props.title}</h3>
-                    <p>{props.subtitle}</p>
+        <section style={props.bgcolor}>
+            <div className="container-discount-slider">
+                <div className='slider-top'>
+                    <div className="slider-title">
+                        <h3 className={props.subtitle ? 'bottom-margin-0' : ''}>{props.title}</h3>
+                        <p>{props.subtitle}</p>
+                    </div>
+                    
+                    <Button btntext={props.btntext}/>
+                </div>
+                <div className='slider-body'>
+                    <BtnDiscountSlider direction={"prev"}/>
+                    <div className='slider-body-container'>
+
+                    </div>
+                    <BtnDiscountSlider  direction={"next"} />
                 </div>
                 
-                <Button btntext={props.btntext}/>
             </div>
-            <div className='slider-body'>
-
-            </div>
-            
-        </div>
+        </section>
     )
 }

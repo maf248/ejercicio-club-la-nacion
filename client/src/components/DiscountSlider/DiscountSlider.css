@@ -24,7 +24,7 @@
     color: #00043a;
     position: relative;
     display: inline-block;
-    background-color: white;
+    background-color: transparent;
 }
 
 .slider-title h3 {
@@ -56,14 +56,38 @@
     border: 2px solid #008dff;
     padding: 7px 14px;
     border-radius: 15px;
-    background-color: white;
+    background-color: transparent;
     max-width: fit-content;
     flex-wrap: nowrap;
     cursor: pointer;
+    white-space:nowrap;
 }
 
 .slider-body {
     width: 100%;
     height: 200px;
     background-color: lightgray;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.slider-body-container {
+    width: 90%;
+    background-color: lightgray;
+    padding: 10px;
+}
+
+.btn-discount-slide {
+    height: fit-content;
+    font-size: 1.5rem;
+    align-self: center;
+    margin-left: auto;
+    margin-right: auto;
+    border: none;
+    background-color: lightgray;
+    cursor: pointer;
+    outline: none;
+}
+.btn-discount-slide:hover {
+    transform: scale(1.1);
 }
