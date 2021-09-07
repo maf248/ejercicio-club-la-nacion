@@ -6,7 +6,6 @@ function Footer (props) {
     return (
         <footer className="footer">
             <p className='footer-author'><i className='fab fa-react'/> Marcelo Angel Fanego </p>
-            <p className='footer-data'><i className='fas fa-laptop-code'/> API: {props.data}</p>
         </footer>
     )
 }

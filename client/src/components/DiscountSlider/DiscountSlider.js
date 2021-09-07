@@ -15,7 +15,9 @@ export default function DiscountSlider(props) {
                 const json = await response.json();
                 setData({...json});
                 setIsDataReady(true);
-                console.log(data)
+                if (data) {
+                    console.log(data);
+                }
                 
             } catch (error) {
                 console.log(error)
