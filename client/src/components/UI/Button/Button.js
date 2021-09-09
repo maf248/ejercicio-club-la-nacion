@@ -5,8 +5,8 @@ export default function Button(props) {
 
 
     return (
-        <div className='Button-container'>
-            <button className='ButtonUI'>{props.btntext}</button>
+        <div className={`${props.cardbtn ? 'Card-button-container' : 'Button-container'}`}>
+            <button className={`ButtonUI ${props.cardbtn ? props.cardbtn : ''}`}>{props.btntext}</button>
         </div>
     )
 }

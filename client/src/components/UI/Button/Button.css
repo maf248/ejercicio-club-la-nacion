@@ -1,0 +1,28 @@
+.ButtonUI {
+    width: auto;
+    max-height: 2rem;
+    font-family: Roboto;
+    font-weight: bold;
+    font-size: 0.7rem;
+    color: #008dff;
+    border: 2px solid #008dff;
+    padding: 7px 14px;
+    border-radius: 15px;
+    background-color: transparent;
+    max-width: fit-content;
+    flex-wrap: nowrap;
+    cursor: pointer;
+    white-space:nowrap;
+}
+
+.Button-container {
+    width: 25%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.Card-button-container {
+    padding: 10px 0;
+    justify-self: flex-end  ;
+}
