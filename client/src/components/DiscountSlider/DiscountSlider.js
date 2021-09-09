@@ -2,6 +2,7 @@ import React from 'react';
 import './DiscountSlider.css';
 
 import Button from '../UI/Button/Button';
+import Card from '../UI/Card/Card';
 import { useEffect, useState } from 'react'
 
 import BtnDiscountSlider from './BtnDiscountSlider';
@@ -30,6 +31,8 @@ export default function DiscountSlider(props) {
         
     }, [isDataReady]);
 
+     
+
     return (
         <section>
             <div className="container-discount-slider">
@@ -44,7 +47,13 @@ export default function DiscountSlider(props) {
                 <div className='slider-body'>
                     <BtnDiscountSlider direction={"prev"}/>
                     <div className='slider-body-container'>
-
+                        
+                    
+                        {data ? data.accounts.map(account => (
+                            <Card data={account} key={account.id} />
+                        )) : null}
+                  
+                    
                     </div>
                     <BtnDiscountSlider  direction={"next"} />
                 </div>

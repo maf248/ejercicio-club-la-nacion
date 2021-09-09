@@ -72,6 +72,9 @@
     justify-content: center;
 }
 .slider-body-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
     width: 80%;
     background-color: lightgray;
     padding: 10px;

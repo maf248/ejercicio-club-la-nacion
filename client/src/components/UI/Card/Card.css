@@ -1,0 +1,30 @@
+.card-container {
+    height: auto;
+    width: 20%;
+    background-color: #008dff;
+    margin: 5px 5px 5px 5px;
+    border-radius: 10px;
+}
+.card-container a {
+    text-decoration: none;
+}
+.card-title {
+    margin: 0;
+    color: white;
+    font-weight: bold;
+    font-size: 0.75rem;
+}
+
+.card-picture {
+    border-radius: 10px 10px 0px 0px;
+    width: 100%;
+    height: auto;
+    max-height: 55%;
+    box-sizing: border-box;
+}
+
+.card-data-container {
+    height: 45%;
+    padding: 2px 6px;
+    box-sizing: border-box;
+}
