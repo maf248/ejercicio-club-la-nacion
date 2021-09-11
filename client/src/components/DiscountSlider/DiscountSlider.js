@@ -31,10 +31,12 @@ export default function DiscountSlider(props) {
         
     }, [isDataReady]);
 
-     
+    const bgcolor = {
+        backgroundColor : props.bgcolor || 'transparent'
+    }
 
     return (
-        <section>
+        <section style={bgcolor}>
             <div className="container-discount-slider">
                 <div className='slider-top'>
                     <div className="slider-title">

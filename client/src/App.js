@@ -14,8 +14,18 @@ function App (props) {
     <div className='App'>
     <Header/>
     <MainSlider />
-    <DiscountSlider title={'Turismo en Buenos Aires'} btntext={'TODOS LOS BENEFICIOS'} endpoint={'/api/tourism'} />
-    <DiscountSlider title={'Códigos de descuento'} subtitle={'¿Sos socio Club LA NACIÓN? Descarga tu código y disfrutá beneficios exclusivos en tus marcas favoritas.'} btntext={'TODOS LOS CÓDIGOS'} endpoint={'/api/discount'} />
+    <DiscountSlider 
+      title={'Turismo en Buenos Aires'}
+      btntext={'TODOS LOS BENEFICIOS'}
+      endpoint={'/api/tourism'}
+    />
+    <DiscountSlider 
+      title={'Códigos de descuento'}
+      subtitle={'¿Sos socio Club LA NACIÓN? Descarga tu código y disfrutá beneficios exclusivos en tus marcas favoritas.'}
+      btntext={'TODOS LOS CÓDIGOS'}
+      endpoint={'/api/discount'}
+      bgcolor={'#f2f0ea'}  
+    />
     </div>
     <Footer />
     </>
