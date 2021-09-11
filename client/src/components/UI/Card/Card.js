@@ -19,6 +19,13 @@ export default function Card(props) {
                         <a href={`https://club.lanacion.com.ar/${props.data.crmid}`} target="_blank" rel="noopener noreferrer">
                             <p className='card-title tourism'>{props.data.name}</p>
                         </a>
+                        <div className='card-categories-discounts'>
+                            <span className='category-black'>20 %</span>
+                            <span style={{color: 'gray', opacity: '50%'}}>|</span>
+                            <span className='category-premium'>0 %</span>
+                            <span style={{color: 'gray', opacity: '50%'}}>|</span>
+                            <span className='category-classic'>0 %</span>
+                        </div>
                         <div className='card-data-location'>
                             <i className="fas fa-map-marker-alt" />
                             <p>{`A ${closestLocation >= 1000 ? `${(closestLocation/1000).toString().replace(".", ",")} km` : `${closestLocation} m` }`}</p>
