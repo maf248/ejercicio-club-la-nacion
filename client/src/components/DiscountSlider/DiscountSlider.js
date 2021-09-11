@@ -52,7 +52,11 @@ export default function DiscountSlider(props) {
                         
                     
                         {data ? data.accounts.map(account => (
-                            <Card data={account} key={account.id} />
+                            <Card
+                                data={account}
+                                key={account.id}
+                                design={props.endpoint === '/api/tourism' ? 'card-info' : 'card-button'}
+                            />
                         )) : null}
                   
                     
