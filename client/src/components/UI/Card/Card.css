@@ -7,22 +7,37 @@
     margin: 5px 10px 5px 10px;
     border-radius: 10px;
 }
+
+.card-container.card-info {
+    border: 2px solid #f2f0ea;
+    background-color: transparent !important;
+}
+
 .card-container a {
     text-decoration: none;
 }
+
 .card-title {
     padding: 10px 0;
     margin: 0;
-    color: white;
     font-weight: bold;
     font-size: 0.75rem;
+}
+
+.card-title.discount {
+    color: white;
+}
+
+.card-title.tourism {
+    color: black;
 }
 
 .card-picture {
     border-radius: 10px 10px 0 0;
     width: 100%;
     height: auto;
-    max-height: 120px;
+    max-height: 110px;
+    max-height: 110px;
     box-sizing: border-box;
 }
 
@@ -31,11 +46,14 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    min-height: 45%;
     padding: 2% 5%;
     border-radius: 0 0 10px 10px;
     box-sizing: border-box;
-    background-color: #008dff;
+    background-color: transparent;
+}
+
+.card-data-container.blue {
+    background-color: #008dff !important;
 }
 
 .card-button {
@@ -43,36 +61,81 @@
     font-size: 0.5rem;
     border: 2px solid white;
     border-radius: 5px;
-    position: relative;
-
 }
 
+.card-data-location {
+    display: flex;
+    height: fit-content;
+    margin: 0 0 5px 5px;
+    align-items: center;
+}
 
-@media (min-width:320px)  { 
+.card-data-location i {
+    margin-right: 5px !important;
+}
+
+.card-data-location p,
+.card-data-location i {
+    color: #C1C5D2;
+    font-size: 0.75rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+@media (min-width:320px) {
     /* smartphones, portrait iPhone, portrait 480x320 phones (Android) */
 }
-@media (min-width:480px)  {
+
+@media (min-width:480px) {
     /* smartphones, Android phones, landscape iPhone */
 }
-@media (min-width:600px)  {
+
+@media (min-width:600px) {
+
     /* portrait tablets, portrait iPad, e-readers (Nook/Kindle), landscape 800x480 phones (Android) */
+    .card-picture {
+        max-height: 90px;
+    }
 }
-@media (min-width:801px)  {
+
+@media (min-width:801px) {
     /* tablet, landscape iPad, lo-res laptops ands desktops */
-    
 }
+
 @media (min-width:1025px) {
+
     /* big landscape tablets, laptops, and desktops */
-    .card-picture {
-        max-height: 120px;
-    }
 }
+
 @media (min-width:1281px) {
+
     /* hi-res laptops and desktops */
-    .card-picture {
-        max-height: 130px;
-    }
+
     .card-container {
         width: 20%;
+    }
+}
+
+@media (min-width:2000px) {
+
+    /* 4K */
+    .card-picture {
+        max-height: 230px;
+    }
+
+    .card-container {
+        width: 20%;
+    }
+
+    .card-title {
+        font-size: 1.5rem;
+    }
+
+    .card-data-location p,
+    .card-data-location i {
+        font-size: 1.3rem;
+    }
+    .card-button {
+        font-size: 1.3rem;
     }
 }
