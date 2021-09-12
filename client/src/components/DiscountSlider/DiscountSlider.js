@@ -8,20 +8,31 @@ import { useEffect, useState } from 'react'
 import BtnDiscountSlider from './BtnDiscountSlider';
 
 export default function DiscountSlider(props) {
+    // Se define el estado de "data" y luego se realiza un pedido fetch al endpoint correspondiente.
     const [data, setData] = useState(false);
-
+    //useEffect con un array de dependencias vacío, para que se ejecute solo una vez al renderizar el componente, pidiendo la data.
     useEffect(() => {
         const getData = async () => {
             const response = await fetch(`${props.endpoint}?page=1&limit=4`);
             const json = await response.json();
-            console.log(json);
             setData({...json});
+            console.log(json);
         }
         getData();
     }, []);
-
+    // En caso de establecer color de fondo del slider, se utiliza, caso contrario utiliza fondo transparente.
     const bgcolor = {
         backgroundColor : props.bgcolor || 'transparent'
+    }
+    // Se establece un estado para manejar la posición del slider.
+    const [slideIndex, setSlideIndex] = useState(1);
+    // Función para pasar al siguiente slide, en caso de haber más, caso contrario hacer loop circular.
+    const nextSlide = () => {
+        console.log('NEXT')
+    }
+    // Función para pasar al anterior slide, en caso de haber más, caso contrario hacer loop circular.
+    const prevSlide = () => {
+        console.log('PREVIOUS')
     }
 
     return (
@@ -36,7 +47,10 @@ export default function DiscountSlider(props) {
                     <Button btntext={props.btntext}/>
                 </div>
                 <div className='slider-body'>
-                    <BtnDiscountSlider direction={"prev"}/>
+                    <BtnDiscountSlider
+                        moveSlide={prevSlide}
+                        direction={"prev"}
+                    />
                     <div className='slider-body-container'>
                         
                     
@@ -50,7 +64,10 @@ export default function DiscountSlider(props) {
                   
                     
                     </div>
-                    <BtnDiscountSlider  direction={"next"} />
+                    <BtnDiscountSlider 
+                        moveSlide={nextSlide}
+                        direction={"next"}
+                    />
                 </div>
                 
             </div>
