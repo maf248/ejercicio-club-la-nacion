@@ -9,6 +9,29 @@ export default function Card(props) {
     // En caso de ser menor a 1000 m lo muestra en metros (240 m) y en caso de superar 1000 m lo expresa en kilometros y con coma (3,5 km)
     const closestLocation = Math.min.apply(null, props.data.branches.map(branch => branch.location));
     
+    var discountsPerCategory = {
+        black: [],
+        premium: [],
+        classic: []
+    };
+    props.data.benefits.forEach(benefit => {
+        if (benefit.program_name.includes('Club La Nación Black')) {
+            let blackDiscount = Number(benefit.type.match(/\d/g).join(''));
+            discountsPerCategory.black.push(blackDiscount)
+        }
+        if (benefit.program_name.includes('Club La Nación Premium')) {
+            let premiumDiscount = Number(benefit.type.match(/\d/g).join(''));
+            discountsPerCategory.premium.push(premiumDiscount)
+        }
+        if (benefit.program_name.includes('Club La Nación Classic')) {
+            let classicDiscount = Number(benefit.type.match(/\d/g).join(''))
+            discountsPerCategory.classic.push(classicDiscount)
+        }
+    });
+    const categoryBlackDiscount = Math.max(...discountsPerCategory.black);
+    const categoryPremiumDiscount = Math.max(...discountsPerCategory.premium);
+    const categoryClassicDiscount = Math.max(...discountsPerCategory.classic);
+    
     // Componentes JSX para retornar dinamicamente acorde a cada caso. => Turismo / Descuentos
     const cardInfo = (
                     <>
@@ -20,11 +43,20 @@ export default function Card(props) {
                             <p className='card-title tourism'>{props.data.name}</p>
                         </a>
                         <div className='card-categories-discounts'>
-                            <span className='category-black'>20 %</span>
-                            <span style={{color: 'gray', opacity: '50%'}}>|</span>
-                            <span className='category-premium'>0 %</span>
-                            <span style={{color: 'gray', opacity: '50%'}}>|</span>
-                            <span className='category-classic'>0 %</span>
+                        { categoryBlackDiscount > 0 ? 
+                            (<>
+                                <span className='category-black'>{categoryBlackDiscount} %</span>
+                            </>) : '' }
+                            { categoryPremiumDiscount > 0 ? 
+                            (<>
+                                <span style={{color: 'gray', opacity: '50%'}}>|</span>
+                                <span className='category-premium'>{categoryPremiumDiscount} %</span>
+                            </>) : '' }
+                            { categoryClassicDiscount > 0 ? 
+                            (<>
+                                <span style={{color: 'gray', opacity: '50%'}}>|</span>
+                                <span className='category-classic'>{categoryClassicDiscount} %</span>
+                            </>) : '' }
                         </div>
                         <div className='card-data-location'>
                             <i className="fas fa-map-marker-alt" />
