@@ -84,7 +84,7 @@ export default function Card(props) {
                     </div>
                     </>);
     const cardButton = (<>
-                    <img className='card-picture' src={props.data.images[0].url} alt={props.data.name} />
+                    <img className='card-picture' src={props.data.images[0].url.replace('http', 'https')} alt={props.data.name} />
                     <div className='card-data-container blue'>
                         <p className='card-title discount'>{props.data.name}</p>
                         <a href={`https://club.lanacion.com.ar/${props.data.crmid}`} target="_blank" rel="noopener noreferrer">
