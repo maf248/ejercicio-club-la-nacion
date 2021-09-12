@@ -9,6 +9,7 @@ export default function Card(props) {
     // En caso de ser menor a 1000 m lo muestra en metros (240 m) y en caso de superar 1000 m lo expresa en kilometros y con coma (3,5 km)
     const closestLocation = Math.min.apply(null, props.data.branches.map(branch => branch.location));
     
+    // Se obtienen todos los descuentos que posee cada categoría para cada account.
     var discountsPerCategory = {
         black: [],
         premium: [],
@@ -28,13 +29,31 @@ export default function Card(props) {
             discountsPerCategory.classic.push(classicDiscount)
         }
     });
-    const categoryBlackDiscount = Math.max(...discountsPerCategory.black);
-    const categoryPremiumDiscount = Math.max(...discountsPerCategory.premium);
-    const categoryClassicDiscount = Math.max(...discountsPerCategory.classic);
+
+    // Se obtiene el mayor descuento de cada categoría.
+    var categoryBlackDiscount;
+    if (discountsPerCategory.black !== []) {
+        categoryBlackDiscount = Math.max(...discountsPerCategory.black);
+    } else {
+        categoryBlackDiscount = false;
+    }
+    
+    var categoryPremiumDiscount;
+    if (discountsPerCategory.premium !== []) {
+        categoryPremiumDiscount = Math.max(...discountsPerCategory.premium);
+    } else {
+        categoryPremiumDiscount = false;
+    }
+
+    var categoryClassicDiscount;
+    if (discountsPerCategory.classic.length > 0) {
+        categoryClassicDiscount = Math.max(...discountsPerCategory.classic);
+    } else {
+        categoryClassicDiscount = false;
+    }
     
     // Componentes JSX para retornar dinamicamente acorde a cada caso. => Turismo / Descuentos
-    const cardInfo = (
-                    <>
+    const cardInfo = (<>
                     <a href={`https://club.lanacion.com.ar/${props.data.crmid}`} target="_blank" rel="noopener noreferrer">
                         <img className='card-picture' src={props.data.images[0].url} alt={props.data.name} />
                     </a>
@@ -43,16 +62,16 @@ export default function Card(props) {
                             <p className='card-title tourism'>{props.data.name}</p>
                         </a>
                         <div className='card-categories-discounts'>
-                        { categoryBlackDiscount > 0 ? 
+                        { categoryBlackDiscount ? 
                             (<>
                                 <span className='category-black'>{categoryBlackDiscount} %</span>
                             </>) : '' }
-                            { categoryPremiumDiscount > 0 ? 
+                            { categoryPremiumDiscount ? 
                             (<>
                                 <span style={{color: 'gray', opacity: '50%'}}>|</span>
                                 <span className='category-premium'>{categoryPremiumDiscount} %</span>
                             </>) : '' }
-                            { categoryClassicDiscount > 0 ? 
+                            { categoryClassicDiscount ? 
                             (<>
                                 <span style={{color: 'gray', opacity: '50%'}}>|</span>
                                 <span className='category-classic'>{categoryClassicDiscount} %</span>
@@ -63,10 +82,8 @@ export default function Card(props) {
                             <p>{`A ${closestLocation >= 1000 ? `${(closestLocation/1000).toString().replace(".", ",")} km` : `${closestLocation} m` }`}</p>
                         </div>
                     </div>
-                    </>
-                        );
-    const cardButton = (
-                    <>
+                    </>);
+    const cardButton = (<>
                     <img className='card-picture' src={props.data.images[0].url} alt={props.data.name} />
                     <div className='card-data-container blue'>
                         <p className='card-title discount'>{props.data.name}</p>
@@ -74,8 +91,7 @@ export default function Card(props) {
                             <Button btntext={'QUIERO MI CODIGO'} cardbtn='card-button' />
                         </a>
                     </div>
-                    </>
-                    );
+                    </>);
     // Retorna el contenido correspondiente para cada card en ambos sliders.
     return (
         <div className={`card-container ${props.design === 'card-info' ? 'card-info' : '' }`}>
