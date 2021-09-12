@@ -85,7 +85,7 @@
 .card-data-location {
     display: flex;
     height: fit-content;
-    margin: 0 0 5px 5px;
+    margin: 5px;
     align-items: center;
 }
 
