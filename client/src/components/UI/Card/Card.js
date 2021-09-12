@@ -55,7 +55,7 @@ export default function Card(props) {
     // Componentes JSX para retornar dinamicamente acorde a cada caso. => Turismo / Descuentos
     const cardInfo = (<>
                     <a href={`https://club.lanacion.com.ar/${props.data.crmid}`} target="_blank" rel="noopener noreferrer">
-                        <img className='card-picture' src={props.data.images[0].url} alt={props.data.name} />
+                        <img className='card-picture' src={props.data.images[0].url.replace('http', 'https')} alt={props.data.name} />
                     </a>
                     <div className='card-data-container border'>
                         <a href={`https://club.lanacion.com.ar/${props.data.crmid}`} target="_blank" rel="noopener noreferrer">
