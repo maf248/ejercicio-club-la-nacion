@@ -12,7 +12,7 @@ export default function DiscountSlider(props) {
     const [data, setData] = useState();
     // Se establece un estado para manejar la paginación de la API.
     const [pageIndex, setPageIndex] = useState(1);
-    
+
     // Función para obtener data paginada de los endpoints API correspondientes.
     const getData = async (pageIndex) => {
         const response = await fetch(`${props.endpoint}?page=${pageIndex}&limit=4`);
@@ -24,6 +24,7 @@ export default function DiscountSlider(props) {
     useEffect(() => {
         getData(pageIndex);
     }, [pageIndex]);
+
     // En caso de establecer color de fondo del slider, se utiliza, caso contrario utiliza fondo transparente.
     const bgcolor = {
         backgroundColor : props.bgcolor || 'transparent'
@@ -70,7 +71,7 @@ export default function DiscountSlider(props) {
                                 key={account.id}
                                 design={props.endpoint === '/api/tourism' ? 'card-info' : 'card-button'}
                             />
-                        )) : null}
+                        )) : <i className="fas fa-spinner spinning"/>}
                   
                     
                     </div>
