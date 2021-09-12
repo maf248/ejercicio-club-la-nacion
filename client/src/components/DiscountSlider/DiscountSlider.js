@@ -8,28 +8,17 @@ import { useEffect, useState } from 'react'
 import BtnDiscountSlider from './BtnDiscountSlider';
 
 export default function DiscountSlider(props) {
-    const [isDataReady, setIsDataReady] = useState(false);
     const [data, setData] = useState(false);
 
     useEffect(() => {
-        async function getData() {
-            try {
-                const response = await fetch(`${props.endpoint}?page=1&limit=4`);
-                const json = await response.json();
-                setData({...json});
-                setIsDataReady(true);
-                if (data) {
-                    console.log(data);
-                }
-                
-            } catch (error) {
-                console.log(error)
-            }
-            
+        const getData = async () => {
+            const response = await fetch(`${props.endpoint}?page=1&limit=4`);
+            const json = await response.json();
+            console.log(json);
+            setData({...json});
         }
         getData();
-        
-    }, [isDataReady]);
+    }, []);
 
     const bgcolor = {
         backgroundColor : props.bgcolor || 'transparent'
