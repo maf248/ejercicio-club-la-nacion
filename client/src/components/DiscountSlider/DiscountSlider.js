@@ -27,10 +27,6 @@ export default function DiscountSlider(props) {
             setSliderData([...json.accounts]);
         }
     }
-    
-    useEffect(() => {
-        console.log(data)
-    }, [data]);
 
     //useEffect con dependencia paginationIndex, para que se ejecute solo una vez al renderizar el componente o al cambiar paginationIndex, pidiendo la data.
     useEffect(() => {
@@ -48,27 +44,26 @@ export default function DiscountSlider(props) {
         if (data.meta.nextPage && data.meta.total > data.accounts.length) {
             setpaginationIndex(paginationIndex + 1);
         }
+        // Toma el ultimo y lo coloca en primer lugar
         let actualData = sliderData.slice();
         let lastElement = actualData.pop();
         actualData.unshift(lastElement);
 
         setSliderData(actualData)
-
-        console.log('NEXT')
     }
     // Función para pasar al anterior slide, en caso de haber más, caso contrario hacer loop circular.
     const prevSlide = () => {
+        // En caso de avanzar hacia atras, pide la ultima pagina de resultados.
         if (data.meta.total > data.accounts.length) {
             let lastIndex = Math.ceil(data.meta.total / 4);
             setpaginationIndex(lastIndex)
         }
+        // Toma el primero y lo coloca en ultimo lugar
         let actualData = sliderData.slice();
         let firstElement = actualData.shift();
         actualData.push(firstElement);
 
         setSliderData(actualData)
-
-        console.log('PREVIOUS')
     }
 
     return (

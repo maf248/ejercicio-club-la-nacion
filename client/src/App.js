@@ -8,7 +8,7 @@ import DiscountSlider from './components/DiscountSlider/DiscountSlider';
 
 import Footer from './components/Footer/Footer';
 
-function App (props) {
+function App () {
   return (
     <>
     <div className='App'>
