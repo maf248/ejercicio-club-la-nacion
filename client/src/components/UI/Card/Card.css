@@ -72,6 +72,7 @@
 }
 .card-categories-discounts span{
     margin-right: 5px;
+    white-space: nowrap;
 }
 .category-black{
     color: black;

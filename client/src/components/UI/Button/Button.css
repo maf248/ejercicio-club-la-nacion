@@ -26,3 +26,48 @@
     padding: 10px 0;
     justify-self: flex-end;
 }
+
+@media (min-width:320px) {
+    /* smartphones, portrait iPhone, portrait 480x320 phones (Android) */
+    .ButtonUI {
+        transform: scale(0.7);
+    }
+}
+
+@media (min-width:480px) {
+    /* smartphones, Android phones, landscape iPhone */
+    .ButtonUI {
+        transform: scale(0.8);
+    }
+}
+
+@media (min-width:600px) {
+
+    /* portrait tablets, portrait iPad, e-readers (Nook/Kindle), landscape 800x480 phones (Android) */
+    .ButtonUI {
+        transform: scale(0.9);
+    }
+}
+
+@media (min-width:801px) {
+
+    /* tablet, landscape iPad, lo-res laptops ands desktops */
+    .ButtonUI {
+        transform: scale(1);
+    }
+}
+
+@media (min-width:1281px) {
+    /* hi-res laptops and desktops */
+    .card-button {
+        font-size: 0.2rem;
+    }
+}
+
+@media (min-width:2000px) {
+
+    /* 4K */
+    .ButtonUI {
+        transform: scale(1.9);
+    }
+}
