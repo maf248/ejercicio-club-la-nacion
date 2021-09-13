@@ -97,19 +97,23 @@ section {
 }
 
 @media (min-width:320px) {
+
     /* smartphones, portrait iPhone, portrait 480x320 phones (Android) */
     .slider-title h3 {
         font-size: 1.1rem;
     }
+
     .slider-title p {
         font-size: .75rem;
     }
+
     .slider-title {
         margin: 0px;
     }
 }
 
 @media (min-width:480px) {
+
     /* smartphones, Android phones, landscape iPhone */
     .slider-title h3 {
         font-size: 1.3rem;
@@ -123,12 +127,15 @@ section {
     .container-discount-slider {
         width: 95%;
     }
+
     .slider-title {
         margin: 20px;
     }
+
     .slider-title h3 {
         font-size: 1.5rem;
     }
+
     .slider-title p {
         font-size: .75rem;
     }
@@ -140,9 +147,11 @@ section {
     .container-discount-slider {
         width: 90%;
     }
+
     .slider-title h3 {
         font-size: 1.7rem;
     }
+
     .slider-title p {
         font-size: 0.9rem;
     }
@@ -154,9 +163,11 @@ section {
     .container-discount-slider {
         width: 85%;
     }
+
     .slider-title h3 {
         font-size: 1.7rem;
     }
+
     .slider-title p {
         font-size: 0.9rem;
     }
@@ -168,9 +179,11 @@ section {
     .container-discount-slider {
         width: 70%;
     }
+
     .slider-title h3 {
         font-size: 1.7rem;
     }
+
     .slider-title p {
         font-size: 1rem;
     }
@@ -182,9 +195,11 @@ section {
     .container-discount-slider {
         width: 80%;
     }
+
     .slider-title h3 {
         font-size: 3.7rem;
     }
+
     .slider-title p {
         font-size: 2rem;
     }
